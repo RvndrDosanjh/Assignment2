@@ -23,6 +23,25 @@ router.get('/login', (req, res) => {
     });
 });
 
+
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+
+//Allow users to delete their account
+router.get('/delete', authorize, (req, res, next) => {
+    User.findByIdAndRemove(req.user._id, (err, doc) => {
+        if (!err) {
+            req.logout();
+            res.redirect('/');
+        }
+        else {
+            console.log(err);
+        }
+    });
+});
+
 router.post('/login',
     passport.authenticate('local',
         { successRedirect: '/',
