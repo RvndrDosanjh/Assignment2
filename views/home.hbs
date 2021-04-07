@@ -1,0 +1,42 @@
+<section class="showcase">
+    <div class="container">
+        <div class="pb-2 mt-4 mb-2 border-bottom">
+            <h2>Top Typists - Typing Competition
+                {{#if user}}
+                    <a class="btn btn-info float-right btn-sm" href="/test"><i class="fa fa-plus"></i>Take Competition</a>
+                {{/if}}
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Country</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Score</th>
+                        <th>Accuracy</th>
+<!--                        <th>Attempts</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each userList}}
+                        <tr>
+                            <td>{{this.name}}</td>
+                            <td>{{this.country}}</td>
+                            <td>{{this.gender}}</td>
+                            <td>{{this.age}}</td>
+                            <td>{{this.wordsPerMinute}}</td>
+                            <td>{{this.accuracy}}%</td>
+<!--                            <td>{{this.attempts}}</td>-->
+                        </tr>
+                    {{/each }}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
