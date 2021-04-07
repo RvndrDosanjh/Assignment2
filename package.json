@@ -1,4 +1,7 @@
 {
+  "scripts": {
+	"start": "node server.js"
+   },
   "name": "top_typists",
   "version": "1.0.0",
   "description": "",
