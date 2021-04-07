@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const url  = 'mongodb+srv://admin:admin123@cluster0.jvpze.mongodb.net/Assignment2?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb://localhost:27017/typists', { useNewUrlParser: true }, (err) => {
+mongoose.connect(url, { useNewUrlParser: true }, (err) => {
     if (!err) {
         console.log('Connection created.')
     }
